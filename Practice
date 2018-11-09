@@ -75,12 +75,16 @@ my_gui3 = MyGUI3()
 class My_GUI4:
     def __init__(self):
         self.main_window = tkinter.Tk()
-        self.my_button = tkinter.Button(self.main_window,text='Knock! Knock!',command=self.do_something)
+        joke = "Knock, Knock! \nWho's there?\nBroken pencil.\nBroken pencil who?"
+        self.joke_label = tkinter.Label(self.main_window, text=joke)
+        self.my_button = tkinter.Button(self.main_window,text="Answer",command=self.punchline)
+        self.joke_label.pack()
         self.my_button.pack()
         tkinter.mainloop()
 
-    def do_something(self):
-        tkinter.messagebox.showinfo('Who there?')
+    def punchline(self):
+        response = "Never mind! It's Pointless!"
+        tkinter.messagebox.showinfo('Punchline', response)
 
 
 my_gui4 = My_GUI4()
